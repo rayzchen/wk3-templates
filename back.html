@@ -439,6 +439,24 @@ if (`{{Card}}` === "Meaning") {
 		items.push("<reading>" + x + "</reading>");
 	});
 	correctText.innerHTML = items.join(" ");
+} else if (`{{Card}}` === "Characters") {
+	var parts = `{{Character_Whitelist}}`.split(" | ");
+	var lines = [];
+	parts.forEach((x) => {
+		answers = x.split(", ");
+		correctAnswers = correctAnswers.concat(answers);
+		var name = (`{{Card_Type}}` === "Kanji") ? "kanji" : "vocab";
+		var text = "<p><characters class=\"correct-" + name + "\">" + answers.shift() + "</characters> - Reading";
+		if (answers.length > 1) {
+			text += "s";
+		}
+		text += ": ";
+		answers.forEach((x) => {
+			text += "<reading>" + x + "</reading> ";
+		});
+		lines.push(text);
+	});
+	correctText.innerHTML = lines.join("</p><p>") + "</p>";
 }
 
 if (typedAnswerLower != "") {
