@@ -7,6 +7,13 @@ Sections get turned off based on which Card Type is displayed.
 
 <div id=card-back>
 
+<!-- Correct Answers Section -->
+<!--For: Radical, Kanji, Vocabulary-->
+<div>
+	<br>Correct Answers<hr>
+	<p id="correct"></p>
+</div>
+
 <!--Radical Combination Section-->
 <!--For: Kanji-->
 <div id=section-radical-combination>
@@ -393,18 +400,54 @@ if (document.getElementById("typeans")) {
 	var typedAnswerLower = typedAnswer.replace(/'/).toLowerCase();
 	var meaningWhitelist = `{{Meaning_Whitelist}}`.replace(/'/).toLowerCase().split(", ");
 	var readingWhitelist = `{{Reading_Whitelist}}`.toLowerCase().split(", ");
+} else {
+	var typedAnswerLower = "";
+}
 
-	var correctAnswers = [];
-	var incorrectAnswers = [];
-	if (`{{Card}}` === "Meaning") {
-		correctAnswers = meaningWhitelist;
-	} else if (`{{Card}}` === "Reading") {
-		correctAnswers = readingWhitelist;
+var meaningWhitelist = `{{Meaning_Whitelist}}`.toLowerCase().split(", ");
+var readingWhitelist = `{{Reading_Whitelist}}`.toLowerCase().split(", ");
+var correctAnswers = [];
+var correctText = document.getElementById("correct");
+
+if (`{{Card}}` === "Meaning") {
+	var capitalize = (array) => (array.map((elem) => (elem.trimRight().replace(/(^| )\w/g, c => c.toUpperCase()))));
+
+	correctAnswers = `{{Meaning}}`.toLowerCase().split(", ");
+	var accepted = [];
+	var alternative = capitalize(`{{Meaning}}`.toLowerCase().split(", ").splice(1));
+	meaningWhitelist.forEach((correct) => {
+		if (!correctAnswers.includes(correct)) {
+			correctAnswers.push(correct);
+			accepted.push(correct);
+		}
+	});
+
+	var meanings = capitalize(correctAnswers);
+	accepted = capitalize(accepted);
+
+	correctText.innerHTML = "Primary: <b>" + meanings[0] + "</b>";
+	if (meanings.length > 1) {
+		correctText.innerHTML += "<br>Alternative: <b>" + alternative.join(", ") + "</b>";
 	}
+	if (accepted.length > 0) {
+		correctText.innerHTML += "<br>Accepted: <b>" + accepted.join(", ") + "</b>";
+	}
+} else if (`{{Card}}` === "Reading") {
+	correctAnswers = readingWhitelist;
+	var items = [];
+	correctAnswers.forEach((x) => {
+		items.push("<reading>" + x + "</reading>");
+	});
+	correctText.innerHTML = items.join(" ");
+}
 
+if (typedAnswerLower != "") {
 	var answerDiv = document.createElement("div");
-	answerDiv.setAttribute("id","typeans");
+	answerDiv.setAttribute("id", "typeans");
 	answerDiv.innerHTML = typedAnswer;
+	if (`{{Card}}` !== "Meaning") {
+		answerDiv.style.fontFamily = "Hiragino Kaku Gothic Pro W3";
+	}
 	document.getElementById("typeans").replaceWith(answerDiv);
 
 	if (typedAnswerLower === "") {
@@ -414,6 +457,9 @@ if (document.getElementById("typeans")) {
 	} else {
 		answerDiv.classList.add("incorrect");
 	}
+} else {
+	document.getElementsByClassName("input")[0].style.display = "none";
+	document.getElementsByClassName("input")[0].style.display = "none";
 }
 </script>
 
