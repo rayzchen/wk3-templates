@@ -37,8 +37,8 @@
 	background-color: var(--button-color-dark);
 }
 
-.mobile #button#button {
-	width: max(120px)
+.mobile #button {
+	width: max(120px);
 }
 
 .mobile #box-character {
@@ -63,41 +63,30 @@
 }
 
 .mobile.card.nightMode {
-	color: white;
+	color:white;
 }
-
 
 :root {
 	--background-color-light: #black;
 	--background-color-dark: #E1E1E1;
-
 	--font-color-dark: #333333;
 	--font-color-light: white;
-
 	--hint-color: #555555;
-
 	--meaning-color: #999999;
 	--meaning-sub-color: #616161;
-
 	--shadow-color: darkgray;
-
 	--kanji-color: #f100a1;
 	--kanji-color-dark: #b30077;
-
 	--reading-color: #484848;
 	--reading-color-dark: #0a0a0a;
-
 	--radical-color: #00a0f1;
 	--radical-color-dark: #0077b2;
-
 	--vocab-color: #9e00ed;
 	--vocab-color-dark: #7600b1;
-
 	--incorrect-color: #f03;
 	--correct-color: #88cc00;
 	--incorrect-color-dark: #f03;
 	--correct-color-dark: #88cc00;
-
 	--button-color-dark: #616161;
 	--button-color-light: #E0E0E0;
 	--button-color-hover: #BDBDBD;
@@ -109,6 +98,7 @@
 	font-size: 20px;
 	text-align: center;
 	color: black;
+	margin: 10px;
 	background-image: url(_back.png)
 }
 
@@ -151,7 +141,6 @@ radical {
 	padding: 2px;
 	margin: 0px 2px 0px 0px;
 	border-radius: 4px;
-
 }
 
 vocabulary {
@@ -178,24 +167,23 @@ vocabulary {
 
 .radical {
 	font-family: "Hiragino Kaku Gothic Pro W3";
-	font-size: 150px;
+	font-size: 100px;
 	color: var(--font-color-light);
 	background-color: var(--radical-color);
 }
 
 .kanji {
 	font-family: "Hiragino Kaku Gothic Pro W3";
-	font-size: 150px;
+	font-size: 100px;
 	color: var(--font-color-light);
 	background-color: var(--kanji-color);
 }
 
 .vocabulary {
 	font-family: "Hiragino Kaku Gothic Pro W3";
-	font-size: 150px;
+	font-size: 100px;
 	color: var(--font-color-light);
 	background-color: var(--vocab-color);
-
 }
 
 #meanings {
@@ -260,23 +248,28 @@ vocabulary {
 	padding: 0px 0px 0px 20px;
 }
 
-#button#button {
+ja {
+	font-family: "Hiragino Kaku Gothic Pro W3";
+}
+
+#button {
 	padding: 10px 1px 10px 10px;
 	margin: 0px 0px 4px 0px;
 	text-align: left;
 	font-size: 14px;
 	border-radius: 6px 0px 0px 6px;
 	border: none;
-	width: max(140px)
+	width: max(140px);
 }
 
 .notclicked {
+	font-family: "Hiragino Kaku Gothic Pro W3";
 	background-color: var(--button-color-light);
 	transition-duration: 0.2s;
-
 }
 
 .clicked {
+	font-family: "Hiragino Kaku Gothic Pro W3";
 	color: var(--font-color-light);
 	background-color: var(--button-color-dark);
 	transition-duration: 0.2s;
@@ -317,6 +310,7 @@ vocabulary {
 }
 
 #box-character {
+	font-family: "Hiragino Kaku Gothic Pro W3";
 	font-size: 72px;
 	color: var(--font-color-light);
 	background-image: linear-gradient(to bottom, #f0a, #dd0093);
@@ -335,23 +329,22 @@ vocabulary {
 }
 
 radical-combination {
+	font-family: "Hiragino Kaku Gothic Pro W3";
 	font-size: 24px;
 	color: white;
 	background-color: var(--radical-color);
 	box-shadow: 0px 2px var(--radical-color-dark);
-	padding: 5px 8px 5px 8px;
+	padding: 5px 8px;
 	margin: 0px 12px 0px -0px;
-	border-radius: 4px;
+	border-radius: 4px;	
 }
 
 #combination {
 	font-size: 20px;
 	display: flex;
 	align-items: center;
-	margin: 20px 0px 0px 0px;
-	flex-wrap: wrap;
+	margin: 20px 0px -10px 0px;
 }
-
 
 .combination-plus {
 	font-size: 25px;
@@ -359,6 +352,7 @@ radical-combination {
 }
 
 .found-in-voc {
+	font-family: "Hiragino Kaku Gothic Pro W3";
 	font-size: 26px;
 	background-image: linear-gradient(to bottom, #9B3AF8, #8631D6);
 	width: 50%;
@@ -370,6 +364,7 @@ radical-combination {
 }
 
 .found-in-voc-reading {
+	font-family: "Hiragino Kaku Gothic Pro W3";
 	font-size: 10px;
 	width: 50%;
 	background-color: #a0f;
@@ -378,7 +373,6 @@ radical-combination {
 	border-color: #c655ff transparent #80c #c655ff;
 	text-align: right;
 	padding: 15px;
-
 }
 
 #found-in-vocabulary-box {
@@ -398,24 +392,24 @@ radical-combination {
 	border: 0;
 	outline-style: none;
 	font-family: arial;
-	margin: 5px;
+	margin-top: 5px;
 }
 
 .correct {
-	background: var(--correct-color) !important;
+	background: var(--correct-color)!important;
 	color: var(--font-color-light);
 }
 
 .incorrect {
-	background: var(--incorrect-color) !important;
+	background: var(--incorrect-color)!important;
 	color: var(--font-color-light);
 }
 
-.replay-button svg {
-	display: none;
+.replay-button svg { 
+	display:none;
 }
 
-.replay-button:before {
+.replay-button:before { 
 	content: '▶';
 	font-size: 18px;
 	color: gray;
@@ -427,7 +421,6 @@ radical-combination {
 }
 
 @import url("_WakaFont.ttf");
-
 .radical-bar:before,
 .radical-bear:before,
 .radical-beggar:before,
@@ -482,162 +475,167 @@ radical-combination {
 	font-smoothing: antialiased;
 }
 
-.radical-bar:before {
-	content: "\f102";
+.radical-bar:before { content: "\f102"; }
+.radical-bear:before { content: "\f103"; }
+.radical-beggar:before { content: "\f104"; }
+.radical-blackjack:before { content: "\f106"; }
+.radical-cactus:before { content: "\f10a"; }
+.radical-cape:before { content: "\f110"; }
+.radical-chinese:before { content: "\f10d"; }
+.radical-cleat:before { content: "\f10f"; }
+.radical-comb:before { content: "\f113"; }
+.radical-coral:before { content: "\f13e"; }
+.radical-corn:before { content: "\f114"; }
+.radical-creeper:before { content: "\f116"; }
+.radical-death-star:before { content: "\f117"; }
+.radical-egg:before { content: "\f118"; }
+.radical-elf:before { content: "\f155"; }
+.radical-explosion:before { content: "\f119"; }
+.radical-gladiator:before { content: "\f157"; }
+.radical-grass:before { content: "\f121"; }
+.radical-gun:before { content: "\f123"; }
+.radical-hat:before { content: "\f124"; }
+.radical-hills:before { content: "\f127"; }
+.radical-horns:before { content: "\f128"; }
+.radical-kick:before { content: "\f12a"; }
+.radical-leaf:before { content: "\f12c"; }
+.radical-morning:before { content: "\f12e"; }
+.radical-pope:before { content: "\f135"; }
+.radical-psychopath:before { content: "\f138"; }
+.radical-satellite:before { content: "\f156"; }
+.radical-spikes:before { content: "\f144"; }
+.radical-spring:before { content: "\f14b"; }
+.radical-squid:before { content: "\f146"; }
+.radical-stick:before { content: "\f147"; }
+.radical-tofu:before { content: "\f149"; }
+.radical-trash:before { content: "\f107"; }
+.radical-triceratops:before { content: "\f14c"; }
+.radical-trident:before { content: "\f14d"; }
+.radical-viking:before { content: "\f150"; }
+.radical-worm:before { content: "\f153"; }
+.radical-yurt:before { content: "\f126"; }
+.radical-zombie:before { content: "\f154"; }
+
+/* Reverse card */
+characters {
+	font-size: 20px;
+	background-color: var(--reading-color);
+	box-shadow: 2px 2px var(--reading-color-dark);
+	color: var(--font-color-light);
+	padding: 2px;
+	margin-left: 2px;
+	border-radius: 4px;
+}
+characters.correct-kanji {
+	font-size: 25px;
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	padding: 5px 8px 5px 8px;
+	background-color: var(--kanji-color);
+	box-shadow: 0px 2px var(--kanji-color-dark);
+}
+characters.correct-vocab {
+	font-size: 25px;
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	padding: 5px 8px 5px 8px;
+	background-color: var(--vocab-color);
+	box-shadow: 0px 2px var(--vocab-color-dark);
+}
+.charheader {
+	font-family: "Bahnschrift";
+	font-size: 40px;
+	padding: 35px;
+}
+#correct {
+	font-size: 16px;
+}
+#correct reading {
+	font-size: 20px;
+	font-family: "Hiragino Kaku Gothic Pro W3";
 }
 
-.radical-bear:before {
-	content: "\f103";
+/* Level Indicator */
+#question-display {
+	position: relative;
+}
+#level {
+	position: absolute;
+	z-index: 999;
+	left: 20px;
+	top: 20px;
+	background-color: #a1a1a1;
+	background-image: linear-gradient(#a6a6a6, #999);
+	color: #d5d5d5;
+	text-shadow: 0 -1px 0 rgb(0 0 0 / 20%), 0 1px 0 rgb(255 255 255 / 50%);
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	box-shadow: 0 -3px 0 rgb(0 0 0 / 20%) inset;
+	text-decoration: none;
+	font-size: 27px;
+	border-radius: 3px;
+	margin: 0 10px 10px 0;
 }
 
-.radical-beggar:before {
-	content: "\f104";
+/* Keisei */
+#section-phonetic-semantic {
+	margin: 10px 0px 0px 0px;
 }
-
-.radical-blackjack:before {
-	content: "\f106";
+#phonetic-semantic-container {
+	display: flex;
+	flex-direction: row;
 }
-
-.radical-cactus:before {
-	content: "\f10a";
+@media (max-width: 650px) {
+	#phonetic-semantic-container {
+		flex-direction: column;
+	}
+	#phonetic-container {
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
 }
-
-.radical-cape:before {
-	content: "\f110";
+#phonetic-container {
+	display: flex;
+	align-items: start;
+	margin-right: 20px;
 }
-
-.radical-chinese:before {
-	content: "\f10d";
+#compound-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
 }
-
-.radical-cleat:before {
-	content: "\f10f";
+#phonetic-character {
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	font-size: 72px;
+	color: var(--font-color-light);
+	background-image: linear-gradient(to bottom, #0c4, #092);
+	border-top:1px solid #0c4;
+	border-bottom:1px solid #092;
+	border-left:1px solid #0c4;
+	text-align: center;
+	padding: 0px 20px 10px 20px;
+	text-shadow: 0px 1px var(--kanji-color-dark);
+	overflow: hidden;
 }
-
-.radical-comb:before {
-	content: "\f113";
+#radical-character {
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	font-size: 72px;
+	color: var(--font-color-light);
+	background-image: linear-gradient(to bottom, #0af, #0093dd);
+	border-top:1px solid #88d7ff;
+	border-bottom:1px solid #069;
+	border-left:1px solid #88d7ff;
+	text-align: center;
+	padding: 0px 20px 10px 20px;
+	text-shadow: 0px 1px var(--kanji-color-dark);
+	overflow: hidden;
 }
-
-.radical-coral:before {
-	content: "\f13e";
+.mobile #phonetic-character {
+	padding: 0px 15px 10px 15px;
+	font-size: 58px;
 }
-
-.radical-corn:before {
-	content: "\f114";
-}
-
-.radical-creeper:before {
-	content: "\f116";
-}
-
-.radical-death-star:before {
-	content: "\f117";
-}
-
-.radical-egg:before {
-	content: "\f118";
-}
-
-.radical-elf:before {
-	content: "\f155";
-}
-
-.radical-explosion:before {
-	content: "\f119";
-}
-
-.radical-gladiator:before {
-	content: "\f157";
-}
-
-.radical-grass:before {
-	content: "\f121";
-}
-
-.radical-gun:before {
-	content: "\f123";
-}
-
-.radical-hat:before {
-	content: "\f124";
-}
-
-.radical-hills:before {
-	content: "\f127";
-}
-
-.radical-horns:before {
-	content: "\f128";
-}
-
-.radical-kick:before {
-	content: "\f12a";
-}
-
-.radical-leaf:before {
-	content: "\f12c";
-}
-
-.radical-morning:before {
-	content: "\f12e";
-}
-
-.radical-pope:before {
-	content: "\f135";
-}
-
-.radical-psychopath:before {
-	content: "\f138";
-}
-
-.radical-satellite:before {
-	content: "\f156";
-}
-
-.radical-spikes:before {
-	content: "\f144";
-}
-
-.radical-spring:before {
-	content: "\f14b";
-}
-
-.radical-squid:before {
-	content: "\f146";
-}
-
-.radical-stick:before {
-	content: "\f147";
-}
-
-.radical-tofu:before {
-	content: "\f149";
-}
-
-.radical-trash:before {
-	content: "\f107";
-}
-
-.radical-triceratops:before {
-	content: "\f14c";
-}
-
-.radical-trident:before {
-	content: "\f14d";
-}
-
-.radical-viking:before {
-	content: "\f150";
-}
-
-.radical-worm:before {
-	content: "\f153";
-}
-
-.radical-yurt:before {
-	content: "\f126";
-}
-
-.radical-zombie:before {
-	content: "\f154";
+.mobile #radical-character {
+	padding: 0px 15px 10px 15px;
+	font-size: 58px;
 }
