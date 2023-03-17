@@ -22,7 +22,7 @@
 }
 
 .nightMode.card {
-	background-image: url("")
+	background-image: url("");
 }
 
 .nightMode #button {
@@ -99,7 +99,7 @@
 	text-align: center;
 	color: black;
 	margin: 10px;
-	background-image: url(_back.png)
+	background-image: url(_back.png);
 }
 
 .card-front {
@@ -234,7 +234,7 @@ vocabulary {
 #kanji-readings {
 	font-size: 16px;
 	line-height: 2;
-	meaning-color
+	color: var(--meaning-color);
 }
 
 #context-patterns {
@@ -336,7 +336,7 @@ radical-combination {
 	box-shadow: 0px 2px var(--radical-color-dark);
 	padding: 5px 8px;
 	margin: 0px 12px 0px -0px;
-	border-radius: 4px;	
+	border-radius: 4px;
 }
 
 #combination {
@@ -406,11 +406,11 @@ radical-combination {
 	color: var(--font-color-light);
 }
 
-.replay-button svg { 
+.replay-button svg {
 	display:none;
 }
 
-.replay-button:before { 
+.replay-button:before {
 	content: '▶';
 	font-size: 18px;
 	color: gray;
