@@ -552,9 +552,19 @@ radical-combination {
 	border-radius: 3px;
 	margin: 0 10px 10px 0;
 }
+
 .mobile #level {
 	width: 32px;
 	height: 32px;
 	line-height: 32px;
 	font-size: 18px;
+}
+
+/* Correct Answers */
+#correct {
+	font-size: 16px;
+}
+#correct reading {
+	font-size: 20px;
+	font-family: "Hiragino Kaku Gothic Pro W3";
 }
