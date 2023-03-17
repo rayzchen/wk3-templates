@@ -570,3 +570,28 @@ radical-combination {
 .mobile #correct reading {
 	font-size: 24px;
 }
+
+/* Reverse card */
+characters {
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	color: var(--font-color-light);
+	margin-left: 2px;
+	border-radius: 4px;
+}
+characters.correct-kanji {
+	font-size: 25px;
+	padding: 5px 8px 5px 8px;
+	background-color: var(--kanji-color);
+	box-shadow: 0px 2px var(--kanji-color-dark);
+}
+characters.correct-vocab {
+	font-size: 25px;
+	padding: 5px 8px 5px 8px;
+	background-color: var(--vocab-color);
+	box-shadow: 0px 2px var(--vocab-color-dark);
+}
+.charheader {
+	font-family: "Bahnschrift";
+	font-size: 40px;
+	padding: 35px;
+}
