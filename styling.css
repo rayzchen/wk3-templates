@@ -29,11 +29,11 @@
 	background-color: var(--button-color-dark);
 }
 
-.mobile .notclicked:hover {
+.mobile .notclicked#button:hover {
 	background-color: var(--button-color-dark);
 }
 
-.mobile .clicked:hover {
+.mobile .clicked#button:hover {
 	background-color: var(--button-color-dark);
 }
 
@@ -72,7 +72,7 @@
 	--font-color-dark: #333333;
 	--font-color-light: white;
 	--hint-color: #555555;
-	--meaning-color: #999999;
+	--meaning-color: #777777;
 	--meaning-sub-color: #616161;
 	--shadow-color: darkgray;
 	--kanji-color: #f100a1;
@@ -91,7 +91,6 @@
 	--button-color-light: #E0E0E0;
 	--button-color-hover: #BDBDBD;
 }
-
 
 .card {
 	font-family: "Open Sans";
@@ -188,7 +187,7 @@ vocabulary {
 
 #meanings {
 	font-size: 14px;
-	line-height: 0.9;
+	line-height: 0.5;
 }
 
 .explanation {
@@ -220,7 +219,8 @@ vocabulary {
 
 #vocabulary-reading {
 	font-size: 18px;
-	color: gray;
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	color: var(--meaning-color);
 }
 
 #reading-container {
@@ -256,18 +256,19 @@ ja {
 	margin: 0px 0px 4px 0px;
 	text-align: left;
 	font-size: 14px;
+    background: none;
 	border-radius: 6px 0px 0px 6px;
 	border: none;
 	width: max(140px);
 }
 
-.notclicked {
+.notclicked#button {
 	font-family: "Hiragino Kaku Gothic Pro W3";
 	background-color: var(--button-color-light);
 	transition-duration: 0.2s;
 }
 
-.clicked {
+.clicked#button {
 	font-family: "Hiragino Kaku Gothic Pro W3";
 	color: var(--font-color-light);
 	background-color: var(--button-color-dark);
@@ -275,11 +276,11 @@ ja {
 	clip-path: polygon(100% 100%, 100% 85%, 90% 50%, 100% 15%, 100% 0, 0 0, 0 100%);
 }
 
-.notclicked:hover {
+.notclicked#button:hover {
 	background-color: var(--button-color-hover);
 }
 
-.clicked:hover {
+.clicked#button:hover {
 	background-color: var(--button-color-hover);
 }
 
@@ -412,7 +413,7 @@ radical-combination {
 .replay-button:before {
 	content: '▶';
 	font-size: 18px;
-	color: gray;
+	color: var(--meaning-color);
 }
 
 @font-face {
