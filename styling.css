@@ -541,7 +541,7 @@ radical-combination {
 	border-radius: 3px;
 	margin: 0 10px 10px 0;
 }
-#level.mobile {
+.mobile #level {
 	width: 32px;
 	height: 32px;
 	line-height: 32px;
