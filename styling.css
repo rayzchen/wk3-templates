@@ -343,7 +343,7 @@ radical-combination {
 	font-size: 20px;
 	display: flex;
 	align-items: center;
-	margin: 20px 0px -10px 0px;
+	margin-bottom: 20px;
 }
 
 .combination-plus {
