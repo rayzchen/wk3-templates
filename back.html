@@ -123,6 +123,11 @@ if (wordtype.toString().length !== 0) {
 
 <!--SCRIPT: Disable unused Reading divisions.-->
 <script>
+if ("{{Card_Type}}" == "Kana_Vocabulary") {
+	document.getElementById("vocabulary-reading").innerHTML = `{{Characters}}`;
+	document.getElementsByClassName("explanation")[1].style.display = "none";
+}
+
 function disable_reading_div(id, readings) {
 	var div = document.getElementById(id);
 	if (readings === "") {
@@ -206,7 +211,7 @@ if (combinations.length === 0) {
 
 <!--SCRIPT: Slice and add context sentences.-->
 <script>
-if ("{{Card_Type}}" == "Vocabulary") {
+if ("{{Card_Type}}" == "Vocabulary" || "{{Card_Type}}" == "Kana_Vocabulary") {
 	var sentences = `{{Context_Sentences}}`;
 	var array = sentences.split("|");
 
@@ -229,6 +234,7 @@ if ("{{Card_Type}}" == "Vocabulary") {
 <script>
 var readingsection = document.getElementById("section-reading")
 var meaningsection = document.getElementById("section-meaning")
+var boxsection = document.getElementById("section-box")
 var contextsection = document.getElementById("section-context")
 var combinationsection = document.getElementById("section-radical-combination")
 var foundinvocabularysection = document.getElementById("section-found-in-vocabulary")
@@ -242,11 +248,16 @@ if ("{{Card_Type}}" === "Radical") {
 if ("{{Card_Type}}" === "Kanji") {
 	contextsection.style.display = "none";
 	compositionsection.style.display = "none";
-} 
+}
 if ("{{Card_Type}}" === "Vocabulary") {
 	combinationsection.style.display = "none";
 	foundinvocabularysection.style.display = "none";
-} 
+}
+if ("{{Card_Type}}" === "Kana_Vocabulary") {
+	combinationsection.style.display = "none";
+	foundinvocabularysection.style.display = "none";
+	boxsection.style.display = "none";
+}
 </script>
 
 <!--SCRIPT: Populate Box Characters (Found in Kanji, Visually Similar Kanji and Kanji Composition).-->
@@ -319,46 +330,50 @@ if ("{{Card_Type}}" == "Radical") {
 
 <!--SCRIPT: Add Radical Combination Characters.-->
 <script>
-var character = `{{Components_Characters}}`;
-var characterarray = character.split(", ");
-var meaning = "{{Components_Meaning}}";
-var meaningarray = meaning.split(", ");
-
-for (var i = 0; i < meaningarray.length; i++){
-	var div = document.getElementById("combination")
-	var element = document.createElement("div");
-
-	element.innerHTML = "<radical-combination>"+ characterarray[i] + "</radical-combination>" + "" + meaningarray[i].toString().substring(0, 15) + "";
-	div.appendChild(element);
-
-	if (i + 1 != characterarray.length) {
+if ("{{Card_Type}}" == "Kanji") {
+	var character = `{{Components_Characters}}`;
+	var characterarray = character.split(", ");
+	var meaning = "{{Components_Meaning}}";
+	var meaningarray = meaning.split(", ");
+	
+	for (var i = 0; i < meaningarray.length; i++){
 		var div = document.getElementById("combination")
-		var element = document.createElement("p");
-		element.innerHTML = "<div class=combination-plus><b>+<b/></div>";
+		var element = document.createElement("div");
+	
+		element.innerHTML = "<radical-combination>"+ characterarray[i] + "</radical-combination>" + "" + meaningarray[i].toString().substring(0, 15) + "";
 		div.appendChild(element);
+	
+		if (i + 1 != characterarray.length) {
+			var div = document.getElementById("combination")
+			var element = document.createElement("p");
+			element.innerHTML = "<div class=combination-plus><b>+<b/></div>";
+			div.appendChild(element);
+		}
 	}
 }
 </script>
 
 <!--SCRIPT: Add Found in Vocabulary Characters.-->
 <script>
-var character = "{{Found_in_Characters}}";
-var characterarray = character.split(", ");
-var meaning = "{{Found_in_Meaning}}";
-var meaningarray = meaning.split(", ");
-var reading = "{{Found_in_Reading}}";
-var readingarray = reading.split(", ");
-
-for (var i = 0; i < characterarray.length; i++){
-	var div = document.getElementById("found-in-vocabulary-container")
-	var element = document.createElement("div");
-	element.innerHTML = "<div id=found-in-vocabulary-box><div class=found-in-voc>"+ characterarray[i] +"</div><div class=found-in-voc-reading>" + readingarray[i] +"<br>" + meaningarray[i] +"</div></div>";
-	div.appendChild(element);
-}
-
-if (character.toString().length == 0) {
-	var foundinvocabularysection = document.getElementById("section-found-in-vocabulary")
-	foundinvocabularysection.style.display = "none";
+if ("{{Card_Type}}" == "Kanji") {
+	var character = "{{Found_in_Characters}}";
+	var characterarray = character.split(", ");
+	var meaning = "{{Found_in_Meaning}}";
+	var meaningarray = meaning.split(", ");
+	var reading = "{{Found_in_Reading}}";
+	var readingarray = reading.split(", ");
+	
+	for (var i = 0; i < characterarray.length; i++){
+		var div = document.getElementById("found-in-vocabulary-container")
+		var element = document.createElement("div");
+		element.innerHTML = "<div id=found-in-vocabulary-box><div class=found-in-voc>"+ characterarray[i] +"</div><div class=found-in-voc-reading>" + readingarray[i] +"<br>" + meaningarray[i] +"</div></div>";
+		div.appendChild(element);
+	}
+	
+	if (character.toString().length == 0) {
+		var foundinvocabularysection = document.getElementById("section-found-in-vocabulary")
+		foundinvocabularysection.style.display = "none";
+	}
 }
 </script>
 
