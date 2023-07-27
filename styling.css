@@ -180,7 +180,15 @@ vocabulary {
 
 .vocabulary {
 	font-family: "Hiragino Kaku Gothic Pro W3";
-	font-size: 100px;
+	font-size: 50px;
+	color: var(--font-color-light);
+	background-color: var(--vocab-color);
+}
+
+.kana-vocabulary {
+	font-family: "Hiragino Kaku Gothic Pro W3";
+	font-size: 40px;
+	padding: 35px;
 	color: var(--font-color-light);
 	background-color: var(--vocab-color);
 }

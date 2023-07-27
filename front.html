@@ -39,6 +39,9 @@ if ("{{Card_Type}}" == "Radical") {
 	questionDisplayDiv.classList.add("kanji");
 } else if ("{{Card_Type}}" == "Vocabulary") {
 	questionDisplayDiv.classList.add("vocabulary");
+} else if ("{{Card_Type}}" == "Kana_Vocabulary") {
+	questionDisplayDiv.classList.add("kana-vocabulary");
+	questionNameDiv.innerHTML = "Vocabulary <b>" + questionName + "</b>";
 }
 
 if ("{{Card}}" === "Meaning") {
