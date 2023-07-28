@@ -589,6 +589,9 @@ setTooltips(reading, "Reading");
 		.getElementById("vocabulary-reading")
 		.replaceChildren(readingsContainer);
 
+	var readingsection = document.getElementById("section-reading");
+	readingsection.style.display = "block";
+
 	var SHOW_PITCH_DESCRIPTION = true;
 	var SQUASH_DIGRAPHS = false;
 	var PRE_PARSE = false; // load entire "accents.txt" into an object for faster lookup (true: lookup takes ~0.06ms; false: lookup takes ~0.5ms)
