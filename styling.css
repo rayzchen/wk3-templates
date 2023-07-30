@@ -67,7 +67,7 @@
 }
 
 .mobile #question-display {
-	padding: 0px;	
+	padding: 0px;
 }
 
 :root {
@@ -198,9 +198,9 @@ vocabulary {
 	background-color: var(--vocab-color);
 }
 
-#meanings {
+#meanings p {
 	font-size: 14px;
-	line-height: 0.5;
+	margin: 0;
 }
 
 .explanation {
