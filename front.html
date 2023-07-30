@@ -15,7 +15,7 @@ document.getElementById("level").innerHTML = level;
 <script>
 var answerDiv = document.getElementById("typeans");
 if (answerDiv !== null) {
-	answerDiv.setAttribute("placeholder", "Your Response");
+	answerDiv.setAttribute("placeholder", "Enter " + `{{Card}}`);
 	if (`{{Card}}` !== "Meaning") {
 		wanakana.bind(answerDiv);
 		answerDiv.style.fontFamily = "Hiragino Kaku Gothic Pro W3";
