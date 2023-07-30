@@ -383,17 +383,15 @@ if ("{{Card_Type}}" == "Kanji") {
 if (document.getElementById("typeans")) {
 	var typedAnswer = "";
 	var typedAnswer_element = document.getElementById("typeans");
-	if (typedAnswer_element.querySelector(".typegiven")) {
-		// the "typegiven" class exists only on iphone:
-		typedAnswer = typedAnswer_element
-			.querySelector(".typegiven")
-			.querySelector(".typeBad").innerText;
-	} else if (typedAnswer_element.querySelector(".typeBad")) {
-		//for pc and android:
-		typedAnswer = typedAnswer_element.querySelector(".typeBad").innerText;
+	if (typedAnswer_element) {
+		typedAnswer_element.innerHTML = typedAnswer_element.innerHTML.replace(/<br.*/, "");
+		typedAnswer_element.querySelectorAll(".typeGood, .typeBad").forEach((e) => {
+			if (e.innerText == "-") return;
+			typedAnswer += e.innerText;
+		});
 	}
-	typedAnswerLower = typedAnswer.toLowerCase();
-	var meaningWhitelist = `{{Meaning_Whitelist}}`.toLowerCase().split(", ");
+	var typedAnswerLower = typedAnswer.replace(/'/).toLowerCase();
+	var meaningWhitelist = `{{Meaning_Whitelist}}`.replace(/'/).toLowerCase().split(", ");
 	var readingWhitelist = `{{Reading_Whitelist}}`.toLowerCase().split(", ");
 
 	var correctAnswers = [];
