@@ -66,10 +66,6 @@
 	color:white;
 }
 
-.mobile #question-display {
-	padding: 0px;
-}
-
 :root {
 	--background-color-light: #black;
 	--background-color-dark: #E1E1E1;
@@ -184,7 +180,7 @@ vocabulary {
 
 .vocabulary {
 	font-family: "Hiragino Kaku Gothic Pro W3";
-	font-size: 50px;
+	font-size: 75px;
 	padding: 20px;
 	color: var(--font-color-light);
 	background-color: var(--vocab-color);
