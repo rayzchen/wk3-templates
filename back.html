@@ -386,8 +386,8 @@ if (document.getElementById("typeans")) {
 	if (typedAnswer_element) {
 		typedAnswer_element.innerHTML = typedAnswer_element.innerHTML.replace(/<br.*/, "");
 		typedAnswer_element.querySelectorAll(".typeGood, .typeBad").forEach((e) => {
-			if (e.innerText == "-") return;
-			typedAnswer += e.innerText;
+			if (e.innerHTML == "-") return;
+			typedAnswer += e.innerHTML;
 		});
 	}
 	var typedAnswerLower = typedAnswer.replace(/'/).toLowerCase();
