@@ -22,7 +22,7 @@
 }
 
 .nightMode.card {
-	background-image: url("");
+	background-image: none;
 }
 
 .nightMode #button {
@@ -459,6 +459,7 @@ radical-combination {
 .radical-pope:before,
 .radical-psychopath:before,
 .radical-satellite:before,
+.radical-saw:before,
 .radical-spikes:before,
 .radical-spring:before,
 .radical-squid:before,
@@ -513,6 +514,7 @@ radical-combination {
 .radical-pope:before { content: "\f135"; }
 .radical-psychopath:before { content: "\f138"; }
 .radical-satellite:before { content: "\f156"; }
+.radical-saw:before { content: "\f148"; }
 .radical-spikes:before { content: "\f144"; }
 .radical-spring:before { content: "\f14b"; }
 .radical-squid:before { content: "\f146"; }
